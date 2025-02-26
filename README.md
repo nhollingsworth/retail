@@ -20,7 +20,7 @@ options:
                         Run mode: 'serial' or 'parallel' (default: parallel)
 ```
 
-The defaults are optimal (parallel, 25000 chunk size)
+The defaults are optimal (parallel mode, 25,000 chunk size)
 
 On a 2020 Mac M1 with 2 e-cores and 6 p-cores:
 
