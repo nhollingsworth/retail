@@ -1,8 +1,8 @@
 # Retail transactions
 
-How much difference does parallel computing make when processing a CSV file ?
+How much difference does parallel computing make over serial when processing a CSV file ?
 
-The python script in this repo runs on a fictional retail sales CSV file located in the datasets folder. It uses pandas to store the data then does an arbitrary operation on the dataframe line by line ("calculates discount"). Given the data is in a dataframe vectorized calculation would be way quicker but would defeat the point of the exercise. How much quicker ? I might do the test another time.
+The python script in this repo runs on a fictional retail sales CSV file (1 million rows) located in the datasets folder. It uses pandas to store the data then does an arbitrary operation on the dataframe line by line ("calculates discount"). Given the data is already in a dataframe vectorized calculation would be way quicker but would defeat the point of the exercise. How much quicker ? I don't know I might do the test another time.
 
 As per the help flag the mode and chunksize can be set:
 
@@ -20,7 +20,13 @@ options:
                         Run mode: 'serial' or 'parallel' (default: parallel)
 ```
 
-On a 2020 Mac M1 parallel computing perfomance imroves with decreasing chunksize down to somewhere between 75,000 and 25,000.
+The defaults are optimal (parallel, 25000 chunk size)
+
+On a 2020 Mac M1 with 2 e-cores and 6 p-cores:
+
+-  without chunking (ie a chunksize of 1,000,000) parallel computing is about 3 seconds slower than serial (~19s vs ~16s)
+-  parallel computing improved with decreasing chunk size down to a chunk size of somewhere between 75,000 and 25,000
+-  At a chunk size of 25,000 parallel computing processing time is ~4 seconds (ie 1/3 of the time of serial computing)  
 
 
 
