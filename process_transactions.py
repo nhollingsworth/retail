@@ -40,7 +40,7 @@ def process_chunk(chunk):
 
 def parallel_processing(df, chunksize=25000):
     print(f"Chunksize: {chunksize}")
-    n_cores = cpu_count()  # 8 on M1
+    n_cores = cpu_count()  
     df_chunks = [df[i:i + chunksize] for i in range(0, len(df), chunksize)]
     start_time = time.time()
     with Pool(n_cores) as pool:
@@ -54,7 +54,11 @@ if __name__ == '__main__':
     parser.add_argument('--chunksize', type=int, default=25000, help="Chunksize for parallel processing (default: 25000)")
     parser.add_argument('--mode', choices=['serial', 'parallel'], default='parallel',
                         help="Run mode: 'serial' or 'parallel' (default: parallel)")
+    
+    args = parser.parse_args()
 
+
+    
     csv_path = os.path.join(datasets_dir, dataset_file)
 
     if not os.path.exists(csv_path):
@@ -70,8 +74,6 @@ if __name__ == '__main__':
     loading_time = time.time() - loading_start_time
     print(f"CSV to Dataframe Loading time: {loading_time:.2f}s")
 
-    args = parser.parse_args()
-
     if args.mode == 'serial':
         print("Starting serial processing...")
         results, proc_time = serial_processing(df)
@@ -83,3 +85,4 @@ if __name__ == '__main__':
     print(f"Processing time: {proc_time:.2f}s")
     print(f"Total time: {loading_time + proc_time:.2f}s")
     print(f"Resulting Dataframe shape: {results.shape}")
+    print(f"Datafram head: {results.head()}")
