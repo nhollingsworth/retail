@@ -85,4 +85,4 @@ if __name__ == '__main__':
     print(f"Processing time: {proc_time:.2f}s")
     print(f"Total time: {loading_time + proc_time:.2f}s")
     print(f"Resulting Dataframe shape: {results.shape}")
-    print(f"Datafram head: {results.head()}")
+    print(f"Dataframe head: {results.head()}")
