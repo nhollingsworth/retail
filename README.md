@@ -1,7 +1,6 @@
 # Retail transactions
 
-![Alt text](images/1740558137156.jpeg)
-
+![Parallel processing system monitoring in HTOP](images/1740558137156.jpeg)
 
 How much difference does parallel computing make over serial when processing a CSV file ?
 
