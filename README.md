@@ -30,7 +30,3 @@ On a 2020 Mac M1 with 2 e-cores and 6 p-cores:
 -  without chunking (ie a chunksize of 1,000,000) parallel computing is about 3 seconds slower than serial (~19s vs ~16s)
 -  parallel computing improved with decreasing chunk size down to a chunk size of somewhere between 75,000 and 25,000
 -  At a chunk size of 25,000 parallel computing processing time is ~4 seconds (ie a 75% improvement on serial computing)  
-
-https://media.licdn.com/dms/image/v2/D5622AQHiKuw2lIPPbw/feedshare-shrink_2048_1536/B56ZVBWW9jGoAo-/0/1740558137156?e=1752105600&v=beta&t=_rQmWFxLr2SrotyGTKl9SdFpcedBgwVBbpYv8z58ABU![Uploading image.png…]()
-
-
