@@ -1,5 +1,8 @@
 # Retail transactions
 
+![Alt text](images/1740558137156.jpeg)
+
+
 How much difference does parallel computing make over serial when processing a CSV file ?
 
 The python script in this repo runs on a fictional retail sales CSV file (1 million rows) located in the datasets folder. It uses pandas to store the data then does an arbitrary operation on the dataframe line by line ("calculates discount"). Given the data is already in a dataframe vectorized calculation would be way quicker but would defeat the point of the exercise. How much quicker ? I don't know I might do the test another time.
